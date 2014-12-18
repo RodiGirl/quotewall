@@ -26,15 +26,20 @@
 
    
   <h6><strong>Comments:</strong></h6>
+      
       <% combo.comments.each do |comment| %>
       <h6><%= comment.remark %></h6>
       <h6><i>-----<%= comment.user.firstname %>, <%= time_ago_in_words(comment.updated_at) %></i></h6><br>
       <% end %>
+ 
+  
+
+<br />
       <%= link_to 'Add a comment?', new_comment_path %>
-  <hr>
+  
 <h6><%= link_to 'Delete this conversation?', combo, method: :delete, data: { confirm: 'Are you sure?' } %></h6>
 
-
+<hr>
 
   
 

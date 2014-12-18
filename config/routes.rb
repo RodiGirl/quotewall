@@ -1,3 +1,4 @@
+  
 Rails.application.routes.draw do
   resources :comments
 
@@ -7,6 +8,13 @@ Rails.application.routes.draw do
   resources :combinations
 
   root 'combinations#index'
+
+
+
+
+
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

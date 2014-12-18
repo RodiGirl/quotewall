@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
    
    has_many :quotes
    has_many :comments
-
+ 
+	accepts_nested_attributes_for  :quotes, :comments
+	
 end

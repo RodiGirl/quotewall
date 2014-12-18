@@ -5,6 +5,7 @@ class CombinationsController < ApplicationController
   # GET /combinations.json
   def index
     @combinations = Combination.all
+     # @comments = Comment.all
   end
 
   # GET /combinations/1
@@ -16,7 +17,7 @@ class CombinationsController < ApplicationController
   # GET /combinations/new
   def new
     @combination = Combination.new
-    @quote = Quote.new
+  
   end
 
   # GET /combinations/1/edit
