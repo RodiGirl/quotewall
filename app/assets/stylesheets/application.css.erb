@@ -1,0 +1,174 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  background: url(<%= asset_path "bg.jpg" %>) no-repeat center center  ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+
+}
+
+.col-md-7, .col-md-3, .col-md-2 {
+ 	background:rgba(212,150,150,0.9);
+ 	-moz-box-shadow: 6px 5px 20px #808080;
+	-webkit-box-shadow: 6px 5px 20px #808080;
+	box-shadow: 6px 5px 20px #808080;
+	position:relative;
+	font-family: 'Montserrat', sans-serif;
+
+ 
+ }
+
+.navbar {
+	background:rgba(212,150,150,.9)!important;
+ 	-moz-box-shadow: 6px 5px 20px #808080;
+	-webkit-box-shadow: 6px 5px 20px #808080;
+	box-shadow: 6px 5px 20px #808080;
+	position:relative;
+	font-family: 'Montserrat', sans-serif;	
+
+}
+
+
+
+/* unvisited link */
+a:link {
+    color: ##ae3433;
+}
+
+/* visited link */
+a:visited {
+    color: #e6e6e6;
+}
+
+li {
+	color:black;
+}
+
+/*//new code*/
+
+/*html{
+  width:100%;
+  height:100%;
+  background:linear-gradient(145deg ,#072732,#215768);
+}*/
+
+.chat{
+  font:12px Trebuchet MS;
+  min-width:300px;
+  /*width:300px;*/
+  margin:auto auto;
+}
+
+
+.chat ul{
+  margin:0;
+  padding:0;
+  border-bottom:2px solid #9c9c9c;
+  padding-bottom:15px;
+  margin-bottom:15px;
+}
+
+
+.chat ul li{
+  width:100%;
+  list-style-type:none;
+  margin:5px 0;
+  position:relative;
+  display:inline-block;
+
+  
+}
+
+.chat ul li img{
+  float:left;
+   border-radius:50px;
+  box-shadow:0 2px 15px rgba(0,0,0,.5);
+}
+.chat ul li .message{
+  margin-left:120px;
+  background:blue;
+  position:relative;
+  min-height:25px;
+  margin-top:35px;
+  padding:10px;
+  box-sizing:border-box;
+   
+}
+
+
+.chat ul li:nth-child(odd) img{
+  float:right;
+}
+
+.chat ul li:nth-child(odd) .message{
+  margin-right:120px;
+  margin-left:0;
+  background:#e6e6e6;
+}
+
+
+
+.chat ul li:nth-child(even) .message{
+  background:#a92d2d;
+}
+
+
+
+
+.chat ul li:nth-child(odd) .message:before{
+  content:"";
+  width:0px;
+  height:0px;
+  position:absolute;
+  right:0;
+  top:0;
+  margin-right:-15px;
+  border-top:15px solid #e6e6e6;
+  border-right:15px solid transparent;
+}
+.chat ul li:nth-child(even) .message:before{
+  content:"";
+  width:0px;
+  height:0px;
+  position:absolute;
+  left:0;
+  top:0;
+  margin-left:-15px;
+  border-top:15px solid #a92d2d;
+  border-left:15px solid transparent;
+}
+
+
+
+.chat input[type="text"]{
+  width:70%; 
+  margin:0; 
+  border:0;
+  padding:6px;
+  background:#e5ecff;
+  font:italic 12px Trebuchet MS;
+  box-sizing:border-box;
+}
+.chat button{
+  box-sizing:border-box;
+  width:30%;padding:6px;font:12px Trebuchet MS; color:white;
+  background:#84adfc;
+  margin:0;
+  border:0;
+}

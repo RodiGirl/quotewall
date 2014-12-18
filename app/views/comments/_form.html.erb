@@ -1,0 +1,34 @@
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_field :remark %>
+  </div>
+  
+
+  <div class="field form-group">
+    <%= f.label "Who said it?" %><br>
+    <%= f.select(:user_id, @users.collect {|s| [s.firstname, s.id] },
+        {:include_blank => "Please select a person"}) %>
+  </div>
+
+   <div class="field form-group">
+      <%= f.label "Which converstion?" %><br>
+      <%= f.select(:combination_id, @combinations.collect {|s| [s.context, s.id] },
+        {:include_blank => "Please select an item"}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

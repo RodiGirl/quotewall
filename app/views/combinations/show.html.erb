@@ -1,0 +1,28 @@
+
+<p id="notice"><%= notice %></p>
+
+
+<% @combinations.each do |combo| %>
+	<h3><%= combo.context %></h3>
+	<h3><%= time_ago_in_words(combo.saidon) %> ago</h3>
+
+ <!-- Table -->
+  <table class="table">
+    <tr>
+    	
+    
+    </tr>
+    <tr>
+    	<% combo.quotes.each do |quote| %> 
+ 		<td><%= quote.statement %></td>
+ 		<td><%= quote.saidby %></td>
+ 		
+ 	</tr>
+  	<% end %>
+  </table>
+
+<% end %>
+</div>
+<%= link_to 'Edit', edit_combination_path(@combination) %> |
+<%= link_to 'Back', combinations_path %>
+

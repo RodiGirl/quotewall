@@ -1,0 +1,35 @@
+<%= form_for(@quote) do |f| %>
+        <% if @quote.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+                  <ul>
+                  <% @quote.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+        <% end %>
+
+
+
+  <div class="field form-group">
+    <%= f.label "What was said?" %><br>
+    <%= f.text_area :statement, placeholder:"Quote", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "Who said it?" %><br>
+    <%= f.select(:user_id, @users.collect {|s| [s.firstname, s.id] },
+        {:include_blank => "Please select a person"}) %>
+  </div>
+
+   <div class="field form-group">
+      <%= f.label "Which converstion?" %><br>
+      <%= f.select(:combination_id, @combinations.collect {|s| [s.context, s.id] },
+        {:include_blank => "Please select an item"}) %>
+  </div>
+
+<button type="submit" class="btn btn-default">Save Quote</button>
+
+<% end %>

@@ -1,0 +1,44 @@
+
+
+<h1>Oh the things we say...</h1>
+
+
+<% @combinations.each do |combo| %>
+  
+  <h3><%= combo.context %></h3>
+  <h5><%= time_ago_in_words(combo.saidon) %> ago</h5>
+      <%= image_tag "openquote.png", :height => "20px", :align => "left" %> 
+
+ <div class="chat">
+ <ul>
+  <% combo.quotes.each do |quote| %>
+     <li><%= image_tag quote.user.avatar.url(:thumb) %>
+     <div class="message"><%= quote.statement %></div>
+     </li>
+          
+       
+    
+  <% end %>
+
+  
+    <%= image_tag "closequote.png" , :height => "20px", :align => "right" %>
+
+
+   
+  <h6><strong>Comments:</strong></h6>
+      <% combo.comments.each do |comment| %>
+      <h6><%= comment.remark %></h6>
+      <h6><i>-----<%= comment.user.firstname %>, <%= time_ago_in_words(comment.updated_at) %></i></h6><br>
+      <% end %>
+      <%= link_to 'Add a comment?', new_comment_path %>
+  <hr>
+<h6><%= link_to 'Delete this conversation?', combo, method: :delete, data: { confirm: 'Are you sure?' } %></h6>
+
+
+
+  
+
+<% end %>    
+ 
+<br>
+
